@@ -1,9 +1,10 @@
 #include "dijkstras.h"
+#include <algorithm>
 
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous) {
     int n = G.numVertices;
     
-    vector<int> distance(n, MAX);
+    vector<int> distance(n, INF);
     previous.resize(n, -1);
     vector<bool> visited(n, false);
 
