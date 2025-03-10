@@ -21,8 +21,8 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
             continue;
         }
 
-        diff_count++;               //when not match
-        if (diff_count > d) 
+        count++;               //when not match
+        if (count > d) 
             return false;
 
         if (length1 > length2)
@@ -36,4 +36,8 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
     }
     count += (length1 - i) + (length2 - j);
     return count <= d;
+}
+
+bool is_adjacent(const string& word1, const string& word2) {
+    return edit_distance_within(word1, word2, 1);
 }
